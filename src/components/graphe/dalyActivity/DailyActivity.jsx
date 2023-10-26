@@ -1,5 +1,6 @@
 import React from 'react';
 import { useEffect,useState } from 'react';
+import'./dailyActivity.css'
 import {
   Bar,
   BarChart,
@@ -27,7 +28,7 @@ useEffect(()=>{
 
   return (
     <div className="daily-activity">
-    <h1> fech data using rechart</h1>
+    <h1 className='title-1'> Activité quotidienne</h1>
       <ResponsiveContainer width="70%" height={400}>
         <BarChart
         data ={data}>

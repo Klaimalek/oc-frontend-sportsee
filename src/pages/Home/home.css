@@ -1,0 +1,11 @@
+.home-dashboard{
+    display: flex;
+}
+.dashboard-sidenave{
+ width: 12%;
+
+}
+.dashboard-content{
+    width: 88%;
+
+}

@@ -1,0 +1,16 @@
+.banner-goodMorning {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 24px;
+
+  padding-left: 90px;
+  padding-top: 90px;
+}
+.banner-firstname{
+    color: rgba(255, 1, 1, 1);
+}
+.banner-subtitle{
+    padding-left: 90px;
+    margin-top: 30px;
+
+}

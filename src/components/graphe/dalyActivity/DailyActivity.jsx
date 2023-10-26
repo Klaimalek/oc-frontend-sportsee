@@ -34,7 +34,7 @@ useEffect(()=>{
         data ={data}>
         <CartesianGrid strokeDasharray='3 3'>
         </CartesianGrid>
-        <XAxis dataKey='name'></XAxis>
+        <XAxis dataKey='name' ></XAxis>
         <YAxis></YAxis>
         <Tooltip></Tooltip>
         <Bar dataKey='Name' fill='malek'></Bar>

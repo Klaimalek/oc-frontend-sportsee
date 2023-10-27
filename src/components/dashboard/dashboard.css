@@ -1,0 +1,11 @@
+.dashbord-content{
+    display: flex;
+    justify-content: space-between;
+}
+.dashbord-acticity{
+width: 70%;
+}
+.dashboard-nutrition{
+    width: 30%;
+    border: 2px solid;
+}

@@ -1,12 +1,18 @@
-import React from 'react'
-import'./sideNav.css'
+import React from 'react';
+import './sideNav.css';
 /** le composant qui permet d'afficher les différentes icons dans sidenavbar */
-function Activity({image}) {
+
+function Activity(props) {
   return (
-    <div className='sideNave-activity'>
-     <img src= {image} alt='activité' className='icon-sideNave'/>
+    <div className="picture-icon">
+      <img
+        src={props.image}
+        alt="activity"
+        className="icon"
+        style={{ background: props.color  }}
+      />
     </div>
-  )
+  );
 }
 
-export default Activity
+export default Activity;

@@ -1,16 +1,47 @@
-/* Import des variables CSS pour les couleurs des icones des cards*/
-.red {
-    background-color: rgba(255, 0, 0, 0.1);
+
+.nutrition-content {
+  display: flex;
+  width: 100%;
+  margin-top: 40%;
 }
 
-.blue {
-    background-color: rgba(74, 184, 255, 0.1);
+.card-img {
+width: 20% ;
 }
 
-.yellow {
-    background-color: rgba(249, 206, 35, 0.1);
+.card-informations{
+width: 80% ;
+
 }
 
-.pink {
-    background-color: rgba(253, 81, 129, 0.1);
+.picture-icon{
+    margin-bottom: 40px;
+    height: 124px;
+    border-radius: 20px 0px 0px 20px;
+    display: grid;
+    place-items: center;
+    background-color:rgba(0, 0, 0, 0.0212);
+}
+.picture-icon .icon{
+ border-radius: 5%;
+}
+.card-nutrition{
+    margin-bottom: 40px;
+    height: 124px;
+    border-radius: 0px 20px 20px 0px;
+    width: 200px;
+  padding-top: 20px;
+    background-color:rgba(0, 0, 0, 0.0212);
+}
+
+.nutrition-quantity {
+  display: flex;
+  font-size: 20px;
+  font-weight: 500;
+ 
+}
+.card-name {
+  font-family: Roboto;
+  margin-top: -17px;
+  color: rgba(116, 121, 140, 1);
 }

@@ -5,16 +5,17 @@ import swimingIcon from'../../assets/swimingIcon.svg'
 import veloIcon from'../../assets/veloIcon.svg'
 import workoutIcon from'../../assets/workoutIcon.svg'
 import Activity from './Activity';
+
+const icons = [yogaIcon,swimingIcon, veloIcon, workoutIcon,]
+
 function SideNav() {
   return (
     <div className='sideNav'>
-      <Activity image ={yogaIcon}/>
-      <Activity image ={swimingIcon}/>
-      <Activity image ={veloIcon}/>
-      <Activity image ={workoutIcon}/>
+    {icons.map((data,i)=> (<div className='sidenive-icon'>
+      <Activity key= {i} image = {data}/>
+    </div>))}
       <small className="copyright">Copyright, Sportsee 2020</small>
     </div>
   )
 }
-
 export default SideNav

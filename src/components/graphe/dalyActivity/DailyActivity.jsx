@@ -10,38 +10,42 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
+  LineChart,
+  Line,
 } from 'recharts';
 
 function DailyActivity() {
-const [data,setData] = useState();
-useEffect(()=>{
-  const fetchData = async ()=>{
-    const response = await fetch ('https://api.coincap.io/v2/assets/?limit=20');
-    const data = await response.json();
-    console.log(data);
-    setData(data.data)
+  const data = [
+    { day: 'L', duration: 30 },
+    { day: 'M', duration: 23 },
+    { day: 'M', duration: 45 },
+    { day: 'J', duration: 50 },
+    { day: 'V', duration: 0 },
+    { day: 'S', duration: 0 },
+    { day: 'D', duration: 60 }
+];
+
+
+const CustomTooltip = ({ active, payload }) => {
+  if (active && payload && payload.length) {
+      const duration = payload[0].value;
+
+      return (
+          <div className="custom-tooltip" style={{ background: 'white', padding: '10px', border: '1px solid #ccc' }}>
+              <p>{`${duration} min`}</p>
+          </div>
+      );
   }
-  fetchData();
-},[]);
 
-
+  return null;
+};
 
   return (
-    <div className="daily-activity">
-    <h1 className='title-1'> Activité quotidienne</h1>
-      <ResponsiveContainer width="70%" height={400}>
-        <BarChart
-        data ={data}>
-        <CartesianGrid strokeDasharray='3 3'>
-        </CartesianGrid>
-        <XAxis dataKey='name' ></XAxis>
-        <YAxis></YAxis>
-        <Tooltip></Tooltip>
-        <Bar dataKey='Name' fill='malek'></Bar>
-        <Bar dataKey='Price' fill='taha'></Bar>
-        </BarChart>
-      </ResponsiveContainer>
-    </div>
+    <LineChart width={600} height={300} data={data}>
+            <XAxis dataKey="day" />
+            <Line type="monotone" dataKey="duration" stroke="#8884d8" dot={false} activeDot={{ r: 8 }} />
+            <Tooltip content={<CustomTooltip />} />
+        </LineChart>
   );
 }
 

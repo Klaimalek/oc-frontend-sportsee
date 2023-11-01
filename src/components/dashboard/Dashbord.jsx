@@ -3,6 +3,7 @@ import Banner from '../banner/Banner';
 import './dashboard.css';
 import DailyActivity from '../graphe/dalyActivity/DailyActivity';
 import CardNutrition from '../nutrition/CardNutrition';
+import NutritionList from '../nutrition/NutritionList';
 
 function Dashbord() {
   return (
@@ -12,7 +13,7 @@ function Dashbord() {
         <DailyActivity />
       </div>
       <div className="dashboard-nutrition">
-        <CardNutrition/>
+        <NutritionList/>
       </div>
     </div>
   );

@@ -1,10 +1,5 @@
 import React from 'react';
-import iconCalory from '../../assets/iconCalory.svg';
-import iconProtein from '../../assets/iconProtein.svg';
-import iconCarbohydrate from '../../assets/iconCarbohydrate.svg';
-import iconLiipids from '../../assets/iconLiipids.svg';
 
-import Activity from '../sideNav/Activity';
 import './cardNutrition.css';
 
 //* Création un objet qui contient les propriétés de chaque type de nutrition */
@@ -24,7 +19,7 @@ export const dataNutrient = {
 };
 
 function CardNutrition(props) {
-  const icons = [iconCalory, iconProtein, iconCarbohydrate, iconLiipids];
+
   return (
     <article className="card-nutrition" key={props.id}>
       <div className="card-body">

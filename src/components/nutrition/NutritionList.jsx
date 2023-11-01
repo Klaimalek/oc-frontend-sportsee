@@ -11,7 +11,7 @@ import Activity from '../sideNav/Activity';
 
 function NutritionList() {
 
-  const icons = [iconCalory, iconProtein, iconCarbohydrate, iconLiipids];
+
 
   const designs = [
     { name: iconCalory, color: 'rgba(255, 0, 0, 0.1)' },

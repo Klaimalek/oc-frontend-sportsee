@@ -1,7 +1,9 @@
-.title-1 {
+.title-chart{
   color: rgba(32, 37, 58, 1);
-  font-family: Roboto;
   font-size: 15px;
   font-weight: 500;
-
+  width: 30%;
+  position: absolute;
+margin-left: 1.5rem;
+  
 }

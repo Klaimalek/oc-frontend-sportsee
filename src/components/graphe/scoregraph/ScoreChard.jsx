@@ -1,16 +1,6 @@
 import React from 'react';
 import './scoreChart.css';
-import {
-  Legend,
-  RadialBar,
-  PieChart,
-  Pie,
-  Sector,
-  Cell,
-  ResponsiveContainer,
-  PolarAngleAxis,
-  RadialBarChart,
-} from 'recharts';
+import { RadialBar, PolarAngleAxis, RadialBarChart } from 'recharts';
 
 const data = [
   {
@@ -24,7 +14,7 @@ function ScoreChard() {
   return (
     <div className="score-chart">
       <h3 className="score-title">Score</h3>
-    
+
       <RadialBarChart
         width={300}
         height={300}
@@ -34,7 +24,6 @@ function ScoreChard() {
         startAngle={90}
         endAngle={450}
         fill="#E60000"
-        
       >
         <PolarAngleAxis type="number" domain={[0, 100]} tick={false} />
 
@@ -70,7 +59,6 @@ function ScoreChard() {
           objectif
         </text>
       </RadialBarChart>
-  
     </div>
   );
 }

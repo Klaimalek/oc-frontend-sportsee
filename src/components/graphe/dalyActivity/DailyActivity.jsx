@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
+
 import './dailyActivity.css';
 import {
   Bar,
@@ -9,9 +9,7 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  ResponsiveContainer,
-  LineChart,
-  Line,
+ 
 } from 'recharts';
 
 function DailyActivity() {

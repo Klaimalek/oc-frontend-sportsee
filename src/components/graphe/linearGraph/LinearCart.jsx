@@ -5,9 +5,9 @@ import {
   XAxis,
   YAxis,
   Line,
-  ResponsiveContainer,
+ 
   Tooltip,
-  CartesianGrid,
+ 
   Legend,
 } from 'recharts';
 

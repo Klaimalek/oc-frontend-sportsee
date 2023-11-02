@@ -51,8 +51,8 @@ function LinearCart() {
       <p className="linear-title"> Durée moyenne des sessions</p>
 
       <LineChart
-        width={400}
-        height={300}
+        width={300}
+        height={263}
         data={data}
         margin={{
           top: 0,

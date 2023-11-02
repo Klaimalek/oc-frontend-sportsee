@@ -5,6 +5,7 @@ import DailyActivity from '../graphe/dalyActivity/DailyActivity';
 import NutritionList from '../nutrition/NutritionList';
 import LinearCart from '../graphe/linearGraph/LinearCart';
 import ScoreChard from '../graphe/scoregraph/ScoreChard';
+import RadarGraph from '../graphe/radargraph/RadarGraph';
 
 function Dashbord() {
   return (
@@ -13,8 +14,10 @@ function Dashbord() {
         <DailyActivity />
         <div className='three-graphs'>
         <LinearCart/>
+        <RadarGraph/>
         <ScoreChard/>
         </div>
+       
       </div>
       <div className="dashboard-nutrition">
         <NutritionList />

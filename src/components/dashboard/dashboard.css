@@ -14,4 +14,7 @@ flex-direction: column;
 }
 .three-graphs{
     display: flex;
+    height: 400px;
+    justify-content: space-between;
+
 }

@@ -9,6 +9,7 @@ import {
   Tooltip,
  
   Legend,
+  ResponsiveContainer,
 } from 'recharts';
 
 const data = [
@@ -49,9 +50,9 @@ function LinearCart() {
   return (
     <div className="linear-chart">
       <p className="linear-title"> Durée moyenne des sessions</p>
-
+      <ResponsiveContainer width='100%' height='100%'>
       <LineChart
-        width={300}
+        width={263}
         height={263}
         data={data}
         margin={{
@@ -110,6 +111,7 @@ function LinearCart() {
           dataKey="pv"
         />
       </LineChart>
+      </ResponsiveContainer>
     </div>
   );
 }

@@ -1,12 +1,14 @@
-.title-chart{
+.title-chart {
   color: rgba(32, 37, 58, 1);
   font-size: 15px;
   font-weight: 500;
   width: 30%;
   position: absolute;
-margin-left: 1.5rem;
-  
+  margin-left: 1.5rem;
 }
-.chart-actibity{
-  width: 100%;
+.chart-actibity {
+  width: 900px;
+  height:320px ;
+  background-color: rgba(0, 0, 0, 0.0212);
+  border-radius: 5px;
 }

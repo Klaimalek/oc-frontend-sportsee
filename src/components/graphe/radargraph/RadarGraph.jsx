@@ -5,7 +5,7 @@ import {
   PolarGrid,
   PolarAngleAxis,
   PolarRadiusAxis,
-  
+  ResponsiveContainer
 } from 'recharts';
 import './radargraph.css';
 
@@ -51,6 +51,7 @@ const data = [
 function RadarGraph() {
   return (
     <div className="radar-chart">
+    <ResponsiveContainer width='100%' height='100%'>
       <RadarChart
         cx="50%"
         cy="50%"
@@ -73,6 +74,7 @@ function RadarGraph() {
         <PolarRadiusAxis axisLine={false} tick={false} />
         <Radar name="Mike" dataKey="A" fill="#FF0101" fillOpacity={0.6} />
       </RadarChart>
+      </ResponsiveContainer>
     </div>
   );
 }

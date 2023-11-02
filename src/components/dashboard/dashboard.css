@@ -2,11 +2,11 @@
     display: flex;
     justify-content: space-between;
 }
-.dashbord-graph{
-width: 70%;
+.dashbord-graphs{
 
-display: flex;
-flex-direction: column;
+width: 900px;
+height: 350px;
+
 
 }
 .dashboard-nutrition{
@@ -14,7 +14,8 @@ flex-direction: column;
 }
 .three-graphs{
     display: flex;
-    height: 400px;
+    width:900px ;
+    height: 263px;
     justify-content: space-between;
 
 }

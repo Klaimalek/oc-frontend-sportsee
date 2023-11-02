@@ -73,17 +73,26 @@ function DailyActivity() {
         width={500}
         height={400}
         data={data}
+        margin={{
+          top: 20,
+          right: 0,
+          left: 10,
+          bottom: 20,
+        }}
        
       >
+         {/* CartesianGrid permet d'afficher une grille sur le graphique. */}
         <CartesianGrid strokeDasharray="3 3" />
+         {/*  XAxis représente l'axe X du graphique. */}
         <XAxis
           dataKey="name"
           stroke="#DEDEDE"
           tick={{ fill: '#9B9EAC' }}
           tickLine={false}
-          tickSize={15}
+          tickSize={10}
         />
-        <YAxis orientation="right" />
+        {/** YAxis l'axe y du graphique*/}
+        <YAxis orientation="right"  stroke="#DEDEDE"  tick={{ fill: '#9B9EAC' }}   tickSize={10}  tickLine={false}/>
         <YAxis
           yAxisId="right"
           orientation="right"

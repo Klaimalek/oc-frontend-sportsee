@@ -7,10 +7,23 @@
   margin-left: 20px;
   padding-top: 20px;
 }
-.chart-actibity {
+.chart-activity {
   width: 900px;
-  height:320px ;
+  height: 320px;
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.0212);
   border-radius: 5px;
   margin-bottom: 20px;
+}
+
+
+
+@media (max-width: 1130px)  and (max-height:780px)  {
+  .chart-activity {
+    height:220px;
+    width: 95%;
+    margin-left: 30px;
+
+  
+  }
 }

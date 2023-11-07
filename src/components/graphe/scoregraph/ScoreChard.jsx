@@ -18,13 +18,12 @@ function ScoreChard() {
   const score = 0.5 * 100;
   return (
     <div className="score-chart">
-      
       <div className="schema">
         <ResponsiveContainer width="100%" height="100%">
           <RadialBarChart
             innerRadius="80%"
             outerRadius="80%"
-            margin={{ top: 50 }}
+           margin={{top: 40, bottom:40}}
             data={data}
             barSize={10}
             startAngle={90}
@@ -32,7 +31,7 @@ function ScoreChard() {
             fill="#E60000"
           >
             <PolarAngleAxis type="number" domain={[0, 100]} tick={false} />
-            <RadialBar background  dataKey="uv" />
+            <RadialBar background  dataKey="uv" cornerRadius={10} />
             <text
               x="50%"
               y="50%"

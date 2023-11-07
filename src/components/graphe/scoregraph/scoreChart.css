@@ -2,15 +2,28 @@
 margin-top: 20px;
 background-color: rgba(0, 0, 0, 0.0212);
 border-radius: 5px;
+width: 263px;
+height: 263px;
 }
 .schema{
   width: 263px;
   height: 265px;
   
 }
-.score-title {
+title {
   font-size: 15px;
   font-weight: 500;
-  margin-top: 30px;
-  padding-left: 30px;
+  color: rgba(32, 37, 58, 1);
+
+}
+@media (max-width: 1250px) {
+  .score-chart {
+    width: 200px;
+    height: 200px;
+  }
+  .schema{
+    width: 200px;
+    height: 200px;
+    
+  }
 }

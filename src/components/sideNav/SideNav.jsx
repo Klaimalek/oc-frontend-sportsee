@@ -11,9 +11,9 @@ const icons = [yogaIcon,swimingIcon, veloIcon, workoutIcon,]
 function SideNav() {
   return (
     <div className='sideNav'>
-    {icons.map((data,i)=> (<div className='sidenive-icon'>
+    {icons.map((data,i)=> (
       <Activity key= {i} image = {data}/>
-    </div>))}
+    ))}
       <small className="copyright">Copyright, Sportsee 2020</small>
     </div>
   )

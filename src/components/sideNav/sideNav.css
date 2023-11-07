@@ -1,6 +1,6 @@
 .sideNav {
   background-color: black;
-  max-width: 117px;
+ width: 120px;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -11,12 +11,12 @@
 }
 .copyright {
   color: white;
-  bottom: 8%;
+ margin-top: 70px;
   transform: rotate(-90deg);
   white-space: nowrap;
   font-size: 13px;
   font-weight: 500;
-  position: absolute;
+  
 }
 .sidenive-icon{
   background-color: white;
@@ -33,4 +33,14 @@
 .icon{
     width: 35px;
     height: 35px;
+}
+@media (max-width: 1250px)  and (max-height:780px) {
+  .sideNav {
+    padding-top: 70%;
+
+  }
+
+
+  
+
 }

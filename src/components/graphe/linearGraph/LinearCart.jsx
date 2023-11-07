@@ -49,7 +49,7 @@ function LinearCart() {
     const numberOfDay = ["L ", "M ", "M ", "J ", "V ", "S ", "D "];
   return (
     <div className="linear-chart">
-      <p className="linear-title"> Durée moyenne des sessions</p>
+    
       <ResponsiveContainer width='100%' height='100%'>
       <LineChart
         width={263}

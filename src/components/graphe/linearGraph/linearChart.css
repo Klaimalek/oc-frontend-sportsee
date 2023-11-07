@@ -6,3 +6,9 @@
     height: 263px;
   
 }
+@media (max-width: 1250px) {
+    .linear-chart {
+    width: 200px;
+    height: 200px;
+    }
+  }

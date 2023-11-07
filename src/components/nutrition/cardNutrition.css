@@ -1,6 +1,7 @@
 
 .nutrition-content {
   display: flex;
+  flex-direction: column;
   width: 100%;
   margin-left: 30px;
 
@@ -29,9 +30,9 @@ width: 80% ;
 .card-nutrition{
     margin-bottom: 40px;
     height: 124px;
-    border-radius: 0px 20px 20px 0px;
+    border-radius: 20px;
     width: 200px;
-  padding-top: 20px;
+     padding-top: 20px;
     background-color:rgba(0, 0, 0, 0.0212);
 }
 
@@ -45,4 +46,21 @@ width: 80% ;
   font-family: Roboto;
   margin-top: -17px;
   color: rgba(116, 121, 140, 1);
+}
+@media (max-width: 1250px) {
+  .nutrition-content {
+    margin-left: 10px;
+  }
+  .card-nutrition
+  {
+     width: 100px;
+  }
+  .nutrition-quantity{
+    font-size: 15px;
+    padding-top: 20px;
+    padding-left: 10px;
+  }
+  .card-name {
+    padding-left:10px ;
+  }
 }

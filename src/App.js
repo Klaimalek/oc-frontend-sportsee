@@ -2,20 +2,24 @@
 import './App.css';
 import {Routes, Route } from "react-router-dom"
 import Home from './pages/Home/Home';
-import { getMainData, getDataActivity } from './services/FetchData';
+
+import Profil from './pages/Home/profil/Profil';
 function App() {
   return (
     <div className="App">
     <Routes>
   
-    <Route path="/" element={<Home />} >
+    <Route path="/user/:userId" element={<Home />} >
+    
       {' '}
     </Route>
-   
+    <Route path="/" element={<Profil/>} >
+    
+    {' '}
+  </Route>
   </Routes>
     
-   getMainData()
-   getDataActivity()
+  
     </div>
 
    

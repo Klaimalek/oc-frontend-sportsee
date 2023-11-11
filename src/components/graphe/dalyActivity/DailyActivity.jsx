@@ -1,7 +1,9 @@
 import React from 'react';
-
+import { tickFormatterDate } from '../../../services/models/ModelActivity';
+import { getDataSession } from './../../../services/FetchData';
 import './dailyActivity.css';
 import {
+
   Bar,
   BarChart,
   XAxis,
@@ -13,6 +15,7 @@ import {
 } from 'recharts';
 
 function DailyActivity() {
+  
   const data = [
     {
       name: 'Page A',

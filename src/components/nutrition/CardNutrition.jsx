@@ -25,20 +25,21 @@ export const dataNutrient = {
 
 /** gérer les couleurs de background des icons */
 const designs = [
-  { name: iconCalory, color: 'rgba(255, 0, 0, 0.1)' },
-  { name: iconProtein, color: 'rgba(74, 184, 255, 0.1)' },
-  { name: iconCarbohydrate, color: 'rgba(249, 206, 35, 0.1)' },
-  { name: iconLiipids, color: 'rgba(253, 81, 129, 0.1)' },
+  { name: iconCalory, color: 'rgba(255, 0, 0, 0.1)',units:'kCal' },
+  { name: iconProtein, color: 'rgba(74, 184, 255, 0.1)',units:'g' },
+  { name: iconCarbohydrate, color: 'rgba(249, 206, 35, 0.1)',units:'g' },
+  { name: iconLiipids, color: 'rgba(253, 81, 129, 0.1)',units:'g' },
 ];
+
 function CardNutrition(props) {
   return (
     <article className="card-nutrition" key={props.id}>
-      <div className="card-image">
+      <div className="card-image"   style={{ background: props.color }}>
         <img
           className="info-case__logo"
           src={props.image}
           alt={'logo de' + props.image}
-          style={{ background: props.color }}
+        
         ></img>
       </div>
       <div className="card-body">

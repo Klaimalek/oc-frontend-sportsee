@@ -15,6 +15,7 @@ export const getMainData = async (userId) => {
     const userMainData = await axios.get(mainDataUrl);
     const userData = new MainDataModel(userMainData.data.data);
     // Je retourne un objet avec les données de l'utilisateur et le code d'erreur
+    console.log(userData);
 
     return { data: userData, errorCode };
   } catch (error) {

@@ -24,7 +24,7 @@ function Banner() {
   /** fonction pour récupérer les données et mofifier les states */
   const fetchData = async () => {
     try {
-      const usersResponse = await getMainData('12');
+      const usersResponse = await getMainData(userId);
       if (usersResponse.errorCode === 'ERR_NETWORK') {
         console.log('error');
       }

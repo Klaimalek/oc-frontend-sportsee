@@ -7,43 +7,46 @@
 
 }
 
-.card-img {
-width: 20% ;
-}
+
 
 .card-informations{
 width: 80% ;
 
 }
 
-.picture-icon{
-    margin-bottom: 40px;
-    height: 124px;
-    border-radius: 20px 0px 0px 20px;
-    display: grid;
-    place-items: center;
-    background-color:rgba(0, 0, 0, 0.0212);
-}
-.picture-icon .icon{
- border-radius: 5%;
-}
+
 .card-nutrition{
     margin-bottom: 40px;
     height: 124px;
     border-radius: 20px;
     width: 200px;
-     padding-top: 20px;
+    padding-top: 20px;
+   display: flex;
+    justify-content: space-between;
     background-color:rgba(0, 0, 0, 0.0212);
 }
-
+.card-image{
+  margin-left: 12px;
+  width:60px;
+  height: 60px;
+  text-align: center;
+  display: grid;
+  place-content: center;
+  border-radius: 5px;
+}
 .nutrition-quantity {
   display: flex;
   font-size: 20px;
   font-weight: 500;
+  margin-left: 15px;
  
+}
+.quantity{
+ margin-right: 11px;
 }
 .card-name {
   font-family: Roboto;
+  margin-left: 15px;
   margin-top: -17px;
   color: rgba(116, 121, 140, 1);
 }

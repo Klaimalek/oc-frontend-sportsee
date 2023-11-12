@@ -14,7 +14,7 @@ function Profil() {
           <li className="item-list" onClick={() => navigate('/user/12')}>
             <p className="user-name"> Karl</p>
           </li>
-          <li className="item-list" onClick={() => navigate('/user/12')}>
+          <li className="item-list" onClick={() => navigate('/user/18')}>
             <p className="user-name"> Cécile</p>
           </li>
         </ul>

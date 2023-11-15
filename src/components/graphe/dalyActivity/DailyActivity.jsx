@@ -53,9 +53,6 @@ function DailyActivity() {
     fetchData();
   }, []);
 
-
-
-
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload) {
       return (

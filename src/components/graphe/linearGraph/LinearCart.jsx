@@ -13,6 +13,7 @@ import {
 } from 'recharts';
 import { useParams } from 'react-router-dom';
 import { getDataSession } from '../../../services/FetchData';
+import { formatedWeekDays } from '../../../services/models/ModelSession';
 
 const data = [
   {
@@ -47,12 +48,49 @@ const data = [
   },
 ]
 
+
 function LinearCart() {
     const numberOfDay = ["L ", "M ", "M ", "J ", "V ", "S ", "D "];
-  
+    const [sessions, setSessions] = useState();
+    const { userId } = useParams();
+    
+    /** afficher les message d'erreur */
+    const redirectToErrorPage = (condition, errorMessage) => {
+      if (condition) {
+        console.log('user not find');
+      }
+    };
+    /** vérification de l'id des utilisateurs */
+    const verificationUserId = (userId) => {
+      redirectToErrorPage(userId !== '12' && userId !== '18', 'Invalid user ID');
+    };
+    const verificationData = (users) => {
+      redirectToErrorPage(!users, "Can't get data");
+    };
+    /** fonction pour récupérer les données et mofifier les states */
+    const fetchData = async () => {
+      try {
+        const usersResponse = await getDataSession(userId);
+        if (usersResponse.errorCode === 'ERR_NETWORK') {
+          console.log('error');
+        }
+        setSessions((prevState) => ({
+          ...prevState,
+          main: usersResponse,
+        }));
+        verificationUserId(userId);
+        verificationData(sessions);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    useEffect(() => {
+      fetchData();
+    }, []);
+    
 
-
-
+	
+  if (sessions !== undefined){
   return (
     <div className="linear-chart">
     
@@ -60,7 +98,7 @@ function LinearCart() {
       <LineChart
         width={263}
         height={263}
-        data={data}
+        data={sessions.main.sessions}
         margin={{
           top: 0,
           right: 0,
@@ -79,7 +117,7 @@ function LinearCart() {
     >
       {numberOfDay}
     </text>
-        <XAxis dataKey="name" hide={true} />
+        <XAxis dataKey="day" hide={true} />
         <YAxis
           hide={true}
           domain={['dataMin-20', 'dataMax+40']}
@@ -114,12 +152,13 @@ function LinearCart() {
           }}
           legendType="none"
           type="natural"
-          dataKey="pv"
+          dataKey="sessionLength"
         />
       </LineChart>
       </ResponsiveContainer>
     </div>
   );
+        }
 }
 
 export default LinearCart;

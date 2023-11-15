@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './linearChart.css';
 import {
   LineChart,
@@ -11,6 +11,8 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
+import { useParams } from 'react-router-dom';
+import { getDataSession } from '../../../services/FetchData';
 
 const data = [
   {
@@ -47,6 +49,10 @@ const data = [
 
 function LinearCart() {
     const numberOfDay = ["L ", "M ", "M ", "J ", "V ", "S ", "D "];
+  
+
+
+
   return (
     <div className="linear-chart">
     

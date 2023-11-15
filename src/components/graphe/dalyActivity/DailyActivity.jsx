@@ -1,9 +1,11 @@
 import React from 'react';
 import { tickFormatterDate } from '../../../services/models/ModelActivity';
-import { getDataSession } from './../../../services/FetchData';
-import './dailyActivity.css';
-import {
 
+import './dailyActivity.css';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { getDataActivity } from '../../../services/FetchData';
+import {
   Bar,
   BarChart,
   XAxis,
@@ -15,78 +17,76 @@ import {
 } from 'recharts';
 
 function DailyActivity() {
-  
-  const data = [
-    {
-      name: 'Page A',
-      uv: 4000,
-      pv: 2400,
-      amt: 2400,
-    },
-    {
-      name: 'Page B',
-      uv: 3000,
-      pv: 1398,
-      amt: 2210,
-    },
-    {
-      name: 'Page C',
-      uv: 3000,
-      pv: 1398,
-      amt: 2210,
-    },
-    {
-      name: 'Page D',
-      uv: 2780,
-      pv: 3908,
-      amt: 2000,
-    },
-    {
-      name: 'Page E',
-      uv: 1890,
-      pv: 4800,
-      amt: 2181,
-    },
-    {
-      name: 'Page F',
-      uv: 2390,
-      pv: 3800,
-      amt: 2500,
-    },
-    {
-      name: 'Page G',
-      uv: 3490,
-      pv: 4300,
-      amt: 2100,
-    },
-  ];
+  const [activity, setAtivity] = useState();
+  const { userId } = useParams();
+
+  /** afficher les message d'erreur */
+ /* const redirectToErrorPage = (condition, errorMessage) => {
+    if (condition) {
+      console.log('user not find');
+    }
+  };
+  /** vérification de l'id des utilisateurs */
+ /* const verificationUserId = (userId) => {
+    redirectToErrorPage(userId !== '12' && userId !== '18', 'Invalid user ID');
+  };
+  const verificationData = (users) => {
+    redirectToErrorPage(!users, "Can't get data");
+  };
+  /** fonction pour récupérer les données et mofifier les states */
+  const fetchData = async () => {
+    try {
+      const sessionsResponse = await getDataActivity(userId);
+      if (sessionsResponse.errorCode === 'ERR_NETWORK') {
+        console.log('error');
+      }
+      setAtivity((prevState) => ({
+        ...prevState,
+        main: sessionsResponse,
+      }));
+
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+
 
 
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload) {
       return (
-        <div className="custom-tooltip" style={{backgroundColor:'#E60000'}}>
-          <p className="label" style={{color:'#ffffff'}}>{`${payload[0].value}kg`}</p>
-          <p className="desc" style={{color:'#ffffff'}}>{`${payload[1].value}Kcal`}</p>
+        <div className="custom-tooltip" style={{ backgroundColor: '#E60000' }}>
+          <p
+            className="label"
+            style={{ color: '#ffffff' }}
+          >{`${payload[0].value}kg`}</p>
+          <p
+            className="desc"
+            style={{ color: '#ffffff' }}
+          >{`${payload[1].value}Kcal`}</p>
         </div>
-      )
+      );
     }
-  
-    return null
-  }
+
+    return null;
+  };
   const styleChart = { color: '#74798c', fontSize: '14px' };
   // afficher le contenu du lengend
   const styleLegend = (value) => {
     return <span style={styleChart}>{value}</span>;
   };
-
+  if (activity !== undefined) {
   return (
     <div className="chart-activity">
       <p className="title-chart"> Activité quotidienne </p>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           style={styleChart}
-          data={data}
+          data={activity.main.sessions}
           margin={{
             top: 20,
             right: 0,
@@ -98,11 +98,12 @@ function DailyActivity() {
           <CartesianGrid strokeDasharray="3 3" />
           {/*  XAxis représente l'axe X du graphique. */}
           <XAxis
-            dataKey="name"
+            dataKey="day"
             stroke="#DEDEDE"
             tick={{ fill: '#9B9EAC' }}
             tickLine={false}
             tickSize={10}
+            tickFormatter={tickFormatterDate}
           />
           {/** YAxis l'axe y du graphique*/}
           <YAxis
@@ -130,7 +131,8 @@ function DailyActivity() {
             }}
             labelStyle={{ display: 'none' }}
             cursor={false}
-            allowEscapeViewBox={{ x: true, y: true }} content={<CustomTooltip />}
+            allowEscapeViewBox={{ x: true, y: true }}
+            content={<CustomTooltip />}
           />
           <Legend
             align="right"
@@ -141,7 +143,7 @@ function DailyActivity() {
             formatter={styleLegend}
           />
           <Bar
-            dataKey="pv"
+            dataKey="kilogram"
             name="Poids (kg)"
             fill="#282D30"
             unit="kg"
@@ -149,7 +151,7 @@ function DailyActivity() {
             radius={[10, 10, 0, 0]}
           />
           <Bar
-            dataKey="uv"
+            dataKey="calories"
             name="Calories brûlées (kcal)"
             fill="#E60000"
             unit="kcal"
@@ -160,6 +162,7 @@ function DailyActivity() {
       </ResponsiveContainer>
     </div>
   );
+          }
 }
 
 export default DailyActivity;

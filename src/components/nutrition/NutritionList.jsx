@@ -16,7 +16,7 @@ function NutritionList() {
     { name: iconCarbohydrate, color: 'rgba(249, 206, 35, 0.1)',units:'g' },
     { name: iconLiipids, color: 'rgba(253, 81, 129, 0.1)',units:'g' },
   ];
-designs.map((el)=>(console.log(el.units)))
+
   const [users, setUsers] = useState();
   const { userId } = useParams();
 

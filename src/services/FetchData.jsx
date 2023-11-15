@@ -15,8 +15,7 @@ export const getMainData = async (userId) => {
     const userMainData = await axios.get(mainDataUrl);
     const userData = new MainDataModel(userMainData.data.data);
     // Je retourne un objet avec les données de l'utilisateur et le code d'erreur
-    console.log(userData);
-
+   
     return { data: userData, errorCode };
   } catch (error) {
     if (error.code === 'ERR_NETWORK') {
@@ -49,6 +48,7 @@ export const getDataSession = async (userId) => {
 
   try {
     const userSessions = await axios.get(dataSessionUrl);
+    
     const userDataSession = new ModelSession(userSessions.data.data);
     return userDataSession;
   } catch (error) {
@@ -62,9 +62,8 @@ export const getDataPerformance = async (userId) => {
 
   try {
     const userPerformance = await axios.get(urlDataPerformance);
-
     const dataUserPerformance = new ModelPerformance(userPerformance.data.data);
-    return console.log(dataUserPerformance);
+    return dataUserPerformance;
   } catch (error) {
     console.log(error);
   }

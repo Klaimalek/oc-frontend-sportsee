@@ -41,6 +41,8 @@ function Banner() {
   useEffect(() => {
     fetchData();
   }, []);
+ 
+
   if (users !== undefined) {
     return (
       <div className="banner-deshbord">

@@ -3,7 +3,7 @@ export default class MainDataModel {
 		this.data = data
 		this.userInfos = data.userInfos
 		this.firstName = this.userInfos.firstName
-		this.todayScore = data.todayScore
+		this.todayScore = data.todayScore || data.score
 		this.keyData = data.keyData
 	}
 
@@ -19,3 +19,4 @@ export default class MainDataModel {
 		return this.keyData
 	}
 }
+

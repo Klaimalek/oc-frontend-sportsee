@@ -20,20 +20,6 @@ function DailyActivity() {
   const [activity, setAtivity] = useState();
   const { userId } = useParams();
 
-  /** afficher les message d'erreur */
- /* const redirectToErrorPage = (condition, errorMessage) => {
-    if (condition) {
-      console.log('user not find');
-    }
-  };
-  /** vérification de l'id des utilisateurs */
- /* const verificationUserId = (userId) => {
-    redirectToErrorPage(userId !== '12' && userId !== '18', 'Invalid user ID');
-  };
-  const verificationData = (users) => {
-    redirectToErrorPage(!users, "Can't get data");
-  };
-  /** fonction pour récupérer les données et mofifier les states */
   const fetchData = async () => {
     try {
       const sessionsResponse = await getDataActivity(userId);
@@ -51,7 +37,7 @@ function DailyActivity() {
   };
   useEffect(() => {
     fetchData();
-  }, []);
+  }, );
 
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload) {

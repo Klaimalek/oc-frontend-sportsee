@@ -35,7 +35,7 @@ function RadarGraph() {
   };
   useEffect(() => {
     fetchData();
-  }, []);
+  }, );
 
   // création d' une fonction getKind qui va me permettre de récupérer les valeurs de kind dans data, les traduire en français pour le graphique et mettre dans le bon ordre pour le graphique
 

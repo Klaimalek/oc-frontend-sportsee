@@ -35,7 +35,4 @@
   border-radius: 6px;
 }
 
-@media (max-width: 1250px) and (max-height: 780px) {
-  .sideNav {
-  }
-}
+

@@ -19,19 +19,7 @@ function LinearCart() {
     const [sessions, setSessions] = useState();
     const { userId } = useParams();
     
-    /** afficher les message d'erreur */
-    const redirectToErrorPage = (condition, errorMessage) => {
-      if (condition) {
-        console.log('user not find');
-      }
-    };
-    /** vérification de l'id des utilisateurs */
-    const verificationUserId = (userId) => {
-      redirectToErrorPage(userId !== '12' && userId !== '18', 'Invalid user ID');
-    };
-    const verificationData = (users) => {
-      redirectToErrorPage(!users, "Can't get data");
-    };
+  
     /** fonction pour récupérer les données et mofifier les states */
     const fetchData = async () => {
       try {
@@ -43,15 +31,14 @@ function LinearCart() {
           ...prevState,
           main: usersResponse,
         }));
-        verificationUserId(userId);
-        verificationData(sessions);
+       
       } catch (error) {
         console.log(error);
       }
     };
     useEffect(() => {
       fetchData();
-    }, []);
+    }, );
     
 
 	

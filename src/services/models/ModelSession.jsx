@@ -8,14 +8,14 @@ export default class SessionsModel {
 	}
 }
 
-export const getWeekDays = (sessions) => {
+export const formatedWeekDays = (sessions) => {
 	const formatedSessions = []
 
-	// Je récupère les jours de la semaine en chiffres
-	const daysValue = sessions.map((session) => session.day)
+	// Je récupération les jours de la semaine en chiffres
+	const valueDays = sessions.map((session) => session.day)
 
-	// Je crée un tableau avec les jours de la semaine convertis en lettres
-	const weekDays = daysValue.map((element) => {
+	// céation d' un tableau avec les jours de la semaine convertis en lettres
+	const weekDays = valueDays.map((element) => {
 		if (element === 1) {
 			return 'L'
 		} else if (element === 2) {

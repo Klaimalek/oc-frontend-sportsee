@@ -85,6 +85,7 @@ if(performance !== undefined){
         width={300}
         height={300}
         data={data}
+        margin={{ top: 25, right: 25, bottom: 25, left: 25 }}
       >
         <PolarGrid radialLines={false} />
         <PolarAngleAxis

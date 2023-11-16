@@ -4,12 +4,11 @@ import './sideNav.css';
 
 function Activity(props) {
   return (
-    <div className="picture-icon">
+    <div className="picture-icon" style={{ background:  '#FFFFFF' }}>
       <img
         src={props.image}
         alt="activity"
         className="icon"
-        style={{ background: props.color  }}
       />
     </div>
   );

@@ -1,24 +1,30 @@
 .sideNav {
   background-color: black;
- width: 120px;
+  width: 120px;
   display: flex;
   flex-direction: column;
   height: 100%;
   align-items: center;
-  padding-top: 60%;
-  
-  
+  padding-top: 200px;
+}
+.picture-icon {
+  display: flex;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  align-items: center;
+  justify-content: center;
 }
 .copyright {
   color: white;
- margin-top: 70px;
+  margin-top: 150px;
   transform: rotate(-90deg);
   white-space: nowrap;
   font-size: 13px;
   font-weight: 500;
-  
 }
-.sidenive-icon{
+.sidenive-icon {
   background-color: white;
   height: 60px;
   width: 60px;
@@ -27,20 +33,9 @@
   margin-bottom: 30px;
   padding-top: 30%;
   border-radius: 6px;
-  
-  
 }
-.icon{
-    width: 35px;
-    height: 35px;
-}
-@media (max-width: 1250px)  and (max-height:780px) {
+
+@media (max-width: 1250px) and (max-height: 780px) {
   .sideNav {
-    padding-top: 70%;
-
   }
-
-
-  
-
 }

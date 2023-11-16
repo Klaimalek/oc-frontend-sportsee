@@ -9,13 +9,14 @@ function Profil() {
     <div className="user-selection-container">
       <Header />
       <SideNav />
+      <h1 className='title'> Se connecter en tant que : </h1>
       <nav className="user-selection">
         <ul className="user-selection-list">
           <li className="item-list" onClick={() => navigate('/user/12')}>
-            <p className="user-name"> Karl</p>
+            <p className="user-name"> Karl Dovineau</p>
           </li>
           <li className="item-list" onClick={() => navigate('/user/18')}>
-            <p className="user-name"> Cécile</p>
+            <p className="user-name"> Cecilia Ratorez</p>
           </li>
         </ul>
       </nav>
